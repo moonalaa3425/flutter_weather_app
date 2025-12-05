@@ -1,29 +1,81 @@
-# Weather App
+# 🌤️ Flutter Weather App
 
-## Project Overview
-Weather App is a Flutter application that allows users to check the current weather for any city.  
-The app provides:
-- Search for a city and view its weather details.
-- Add cities to Favorites for quick access.
-- View Recent Searches to easily revisit searched cities.
-- Change temperature unit between Celsius and Fahrenheit in Settings.
+A multi-page Flutter application that displays real-time weather data using the **OpenWeatherMap Current Weather API**.  
+The app allows users to search for cities, view detailed weather information, save favorites, and customize temperature units.
 
-## Features
-- *Home Page*: Search bar, Recent Searches, navigation to Favorites and Settings.
-- *Weather Page*: Displays temperature, feels like, humidity, wind speed, sunrise & sunset with weather icon and a button to add to Favorites.
-- *Favorites Page*: List of favorite cities with option to remove a city or navigate to its weather.
-- *Settings Page*: Toggle between Celsius and Fahrenheit units.
+---
 
-## Technologies Used
-- Flutter & Dart
-- Provider (State Management)
-- Shared Preferences (Persistent storage for Favorites and Recent Searches)
-- OpenWeatherMap API (Weather data)
-- intl package (Time formatting)
+## 📌 Features
 
-## How to Run the Project
-1. Open the project in VS Code or Android Studio.
-2. Run the following commands in terminal:
-```bash
+### 🏠 Home / Search Screen
+- Search for any city by name  
+- View **recent searches**  
+- Quick navigation to **Favorites** and **Settings**  
+
+### 🌦️ Weather Details Screen
+Displays real-time weather information:
+- City name  
+- Temperature  
+- Weather description  
+- Feels like  
+- Humidity  
+- Wind speed  
+- Sunrise & Sunset (converted using timezone offset)  
+- Weather icon from OpenWeatherMap  
+- Local time  
+- Add city to Favorites  
+
+### ⭐ Favorites Screen
+- Shows list of saved favorite cities  
+- Navigate to a city’s weather  
+- Remove a city from favorites  
+
+### ⚙️ Settings Screen
+- Switch temperature unit:
+  - Celsius (°C)
+  - Fahrenheit (°F)
+- (More settings can be added)  
+
+---
+
+## 🛠️ Technologies Used
+- **Flutter & Dart**
+- **Provider** (state management)
+- **Shared Preferences** (local storage)
+- **OpenWeatherMap API**
+- **HTTP package**
+- **intl package** (time formatting)
+
+---
+
+## 🔧 Project Architecture
+lib/
+├── models/
+├── pages/
+├── services/
+├── widgets/
+├── providers/
+└── main.dart
+
+---
+
+## 🔑 API Key Setup (Important)
+1. Create the file:  
+lib/config/api_keys.dart
+2. Add this inside it:
+```dart
+const String openWeatherApiKey = "YOUR_API_KEY_HERE";
+Do NOT upload your real API key to GitHub.
+
+Add the file to .gitignore:
+lib/config/api_keys.dart
+
+🚀 How to Run the Project
+1️⃣ Install Dependencies
 flutter pub get
+2️⃣ Run the App
 flutter run
+3️⃣ Build APK (for submission)
+flutter build apk --release
+APK will be located at:
+build/app/outputs/flutter-apk/app-release.apk
